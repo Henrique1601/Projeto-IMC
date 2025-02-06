@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora IMC</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href=".css/global.css">
+  <link rel="stylesheet" href=".css/media.css">
+</head>
+<body>
+  <main class="main-container">
+    <section class="section-container" id="calculadora-container">
+
+      <h1> Calculadora de IMC</h1>
+          <div class="calculadora">
+
+            <label for="Alt">Altura:</label>
+            <input type="text" name="Alt" id="Altura" placeholder="Exemplo 1,90">
+
+            <label for="Peso">Peso:</label>
+            <input type="text" name="Peso" id="Peso" placeholder="Exemplo 70,4">
+            
+            <button type="button" id="calcular">Calcular</button>
+            <button type="button" id="limpar">Limpar</button>
+          </div>
+
+    </section>
+
+    <section class="resultado-container" id="resultado-container">
+      <div  id="Titulos-table"  style="display: none;">
+        <h1 id="Imc-info">Seu IMC: <span></span></h1>
+        <h2 id="Sit-atual">Situação atual: <span></span> </h2>
+        <h3 >Confira as classificações <span></span></h3>
+
+        <div id="table-resultados">
+            <div class="header">
+              <h4 id="imc-info">IMC <span></span></h4>
+              <h4 id="sit-info"> <span></span></h4>
+              <h4 id="class-info">Classificação <span></span></h4>
+              <h4 >Obesidade</h4>
+            </div>
+
+    <button type="button" id="voltar">Voltar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./js/index.js"></script>
+</body>
+</html>
