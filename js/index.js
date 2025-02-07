@@ -124,7 +124,7 @@
 
 
 
-//Ajuda com DeepSeek
+//Ajuda com DeepSeek/ erros resolvidos por mim 
 // Seleção de elementos
 const alturaInput = document.getElementById('Altura');
 const pesoInput = document.getElementById('Peso');
@@ -134,6 +134,8 @@ const voltarButton = document.getElementById('voltar');
 const titulosTable = document.getElementById('Titulos-table');
 const resultadoContainer = document.getElementById('resultado-container');
 const calculadoraContainer = document.getElementById('calculadora-container');
+const tableresultados = document.getElementById('table-resultados');
+
 
 const Obesidade = document.querySelector('#Obesidade-info span');
 const ImcInfo = document.querySelector('#imc-info span');
@@ -179,34 +181,32 @@ function calcularIMC() {
   }
   
     if (ImcInfo) {
-        ImcInfo.textContent = `
-        Menor que 18,5 
-        Entre 18,5 e 24,9 
-        Entre 25 e 29,9 
-        Entre 30 e 34,9 
-        Maior que 35  
-        `
-        ;
+        ImcInfo.innerHTML = `Menor que 18,5 
+        <br>
+        Entre 18,5 e 24,9
+        <br>
+        Entre 25 e 29,9
+        <br>
+        Entre 30 e 34,9
+        <br>
+        Maior que 35 `;
     }
 
     if (Obesidade) {
-        Obesidade.textContent = `
-        0
-        0
-        I
-        II
-        III
-        `
-        ;
-    }
+        Obesidade.innerHTML = "0<br>0<br>I<br>II<br>III";
+        }
 
     // Mostrar a seção de resultado
     titulosTable.style.display = "block";
+    tableresultados.style.display = "block";
     resultadoContainer.style.display = "block";
     calculadoraContainer.style.display = "none";
     ImcInfo.style.display = "block";
     Obesidade.style.display = "block";
     classInfoSpan.style.display = "block";
+    resultadoContainer.style.height="350px"
+    
+
 }
 
     // Função para classificar o IMC

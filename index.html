@@ -28,22 +28,27 @@
     </section>
 
     <section class="resultado-container" id="resultado-container">
-      <div  id="Titulos-table"  style="display: none;">
+      <div class="Resultados-main">
+      <div  id="Titulos-table"  style="display: none;" class="Titulos-table">
         <h1 id="Imc-info">Seu IMC:<span></span></h1>
         <h2 id="Sit-atual">Situação atual:<span></span> </h2>
-        <h3 >Confira as classificações:<span></span></h3>
-
-        <div id="table-resultados">
-            <div class="header" >
-              <h4 id="imc-info">IMC <span></span></h4>
+        <h3>Confira as classificações:<span></span></h3>
+      </div>
+        
+        <div id="table-resultados" class="table-resultados" style="display: none;">
+            <div class="Resultados" >
+           
+                
+               <h4 id="imc-info">IMC <span></span></h4>
               <!-- <h4 id="sit-info"> <span></span></h4> -->
               <h4 id="class-info">Classificação <span></span></h4>
               <h4 id="Obesidade-info">Obesidade <span></span></h4>
+            
             </div>
-
+               
     <button type="button" id="voltar">Voltar</button>
-        </div>
-      </div>
+  </div>  
+    </div>
     </section>
   </main>
   <script src="./js/index.js"></script>

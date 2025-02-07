@@ -4,10 +4,12 @@
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   text-align: center;
 }
-
+.section-container H1{
+  margin-bottom: 10px;
+}
 .calculadora {
   display: flex;
   flex-direction: column;
@@ -18,35 +20,80 @@ label {
   font-weight: bold;
 }
 
-input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
 
 button {
+  margin-top: 10px;
   padding: 10px;
   border: none;
   background-color: #007BFF;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
+  transition: .5s ease-in-out;
+  box-shadow: 0px 2px 8px 1.5px rgb(138, 140, 222);
 }
 
 button:hover {
   background-color: #0056b3;
+  transition: .5s ease-in-out;
+  transform: translateY(-5px);
 }
 
 .resultado-container {
   display: none;
 }
-
+.Resultados-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
 #Titulos-table {
   display: none;
 }
+.resultado-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-.header {
+.Titulos-table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.Titulos-table h1,h2,h3{
+  margin-top: 7px;
+}
+
+.table-resultados{
+  display: none;
+  display: flex;
+}
+
+.Resultados {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  gap: 4px;
+}
+
+.Resultados h4{
+  
+}
+.Resultados span {
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  width: 170px;
+  height: 100%;
+  letter-spacing: 0.5px;
 }
