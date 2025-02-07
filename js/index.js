@@ -124,7 +124,7 @@
 
 
 
-//DeepSeek
+//Ajuda com DeepSeek
 // Seleção de elementos
 const alturaInput = document.getElementById('Altura');
 const pesoInput = document.getElementById('Peso');
@@ -134,6 +134,10 @@ const voltarButton = document.getElementById('voltar');
 const titulosTable = document.getElementById('Titulos-table');
 const resultadoContainer = document.getElementById('resultado-container');
 const calculadoraContainer = document.getElementById('calculadora-container');
+
+const Obesidade = document.querySelector('#Obesidade-info span');
+const ImcInfo = document.querySelector('#imc-info span');
+const classInfoSpan = document.querySelector('#class-info span');
 
 // Função para calcular IMC
 function calcularIMC() {
@@ -149,48 +153,100 @@ function calcularIMC() {
     // Calcular o IMC
     const imc = peso / (altura * altura);
 
+
     // Exibir os resultados
-    document.getElementById('imc-info').querySelector('span').textContent = imc.toFixed(2);
-    document.getElementById('sit-info').querySelector('span').textContent = getClassificationIMC(imc);
-  
+    // document.getElementById('imc-info').querySelector('span').textContent = getClassificationIMC(imc);
+    // document.getElementById('sit-info').querySelector('span').textContent = getClassificationIMC(imc);
+    // document.getElementById('class-info').querySelector('span').textContent = getClassificationIMC(imc);
+    document.getElementById('Imc-info').querySelector('span').textContent = imc.toFixed(2);
+    document.getElementById('Sit-atual').querySelector('span').textContent = getClassificationIMC(imc);
+    
+
+
+    // Mostrar a seção de resultado
     // Exibir a classificação no #class-info (se o span existir)
-  const classInfoSpan = document.querySelector('#class-info span');
   if (classInfoSpan) {
-      classInfoSpan.textContent = getClassificationIMC(imc);
-  
+    //   classInfoSpan.textContent = getClassificationIMC(imc);
+    classInfoSpan.textContent = `
+    Magreza
+    Peso normal
+    Sobrepeso
+    Obesidade Grau 1
+    Obesidade Grau 2
+    Obesidade Grau 3
+    `
+    ;
   }
+  
+    if (ImcInfo) {
+        ImcInfo.textContent = `
+        Menor que 18,5 
+        Entre 18,5 e 24,9 
+        Entre 25 e 29,9 
+        Entre 30 e 34,9 
+        Maior que 35  
+        `
+        ;
+    }
+
+    if (Obesidade) {
+        Obesidade.textContent = `
+        0
+        0
+        I
+        II
+        III
+        `
+        ;
+    }
+
     // Mostrar a seção de resultado
     titulosTable.style.display = "block";
     resultadoContainer.style.display = "block";
     calculadoraContainer.style.display = "none";
-
-
+    ImcInfo.style.display = "block";
+    Obesidade.style.display = "block";
+    classInfoSpan.style.display = "block";
 }
 
     // Função para classificar o IMC
     function getClassificationIMC(imc) {
-      console.log("IMC calculado", imc )
         if (imc < 18.5) return "Magreza";
         if (imc < 24.9) return "Peso normal";
         if (imc < 29.9) return "Sobrepeso";
         if (imc < 34.9) return "Obesidade Grau 1";
         if (imc < 39.9) return "Obesidade Grau 2";
         return "Obesidade Grau 3";
+        
     }
 
 // Função para limpar os campos
 function limpar() {
     alturaInput.value = '';
     pesoInput.value = '';
+
+
+    document.getElementById('Imc-info').querySelector('span').textContent = '';
+    // document.getElementById('sit-info').querySelector('span').textContent = '';
+    document.getElementById('class-info').querySelector('span').textContent = '';
     document.getElementById('imc-info').querySelector('span').textContent = '';
-    document.getElementById('sit-info').querySelector('span').textContent = '';
-  
+    document.getElementById('Sit-atual').querySelector('span').textContent = '';
+    document.getElementById('Obesidade-info').querySelector('span').textContent = '';
+
    // Limpar a classificação no #class-info (se o span existir)
-   const classInfoSpan = document.querySelector('#class-info span');
-   if (classInfoSpan) {
-       classInfoSpan.textContent = '';
-   }
+//    if (classInfoSpan) {
+//        classInfoSpan.textContent = '';    
+//     }
+//     if(ImcInfo) {
+//         ImcInfo.textContent = '';
+//     }
+//     if(Obesidade) {
+//         Obesidade.textContent = '';
+//     }
    
+   Obesidade.style.display = 'none';
+   ImcInfo.style.display = 'none';
+   classInfoSpan.style.display = 'none';
    titulosTable.style.display = "none";
    resultadoContainer.style.display = "none";
    calculadoraContainer.style.display = "block";
